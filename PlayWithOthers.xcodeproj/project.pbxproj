@@ -21,6 +21,16 @@
 		0AC15FEE17B3688D0026FEF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCF17B3688D0026FEF2 /* Foundation.framework */; };
 		0AC15FF617B3688D0026FEF2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AC15FF417B3688D0026FEF2 /* InfoPlist.strings */; };
 		0AC15FF917B3688D0026FEF2 /* PlayWithOthersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC15FF817B3688D0026FEF2 /* PlayWithOthersTests.m */; };
+		0AC1600717B369990026FEF2 /* PWOMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1600617B369990026FEF2 /* PWOMainTabBarController.m */; };
+		0AC1600817B369990026FEF2 /* PWOMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1600617B369990026FEF2 /* PWOMainTabBarController.m */; };
+		0AC1601D17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */; };
+		0AC1601E17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */; };
+		0AC1602517B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */; };
+		0AC1602617B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */; };
+		0AC1602917B371000026FEF2 /* PWOAggregatedMediaItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602817B371000026FEF2 /* PWOAggregatedMediaItemList.m */; };
+		0AC1602A17B371000026FEF2 /* PWOAggregatedMediaItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602817B371000026FEF2 /* PWOAggregatedMediaItemList.m */; };
+		0AC1602D17B371120026FEF2 /* PWORdioMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602C17B371120026FEF2 /* PWORdioMediaManager.m */; };
+		0AC1602E17B371120026FEF2 /* PWORdioMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602C17B371120026FEF2 /* PWORdioMediaManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,16 @@
 		0AC15FF517B3688D0026FEF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0AC15FF717B3688D0026FEF2 /* PlayWithOthersTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayWithOthersTests.h; sourceTree = "<group>"; };
 		0AC15FF817B3688D0026FEF2 /* PlayWithOthersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayWithOthersTests.m; sourceTree = "<group>"; };
+		0AC1600517B369990026FEF2 /* PWOMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMainTabBarController.h; sourceTree = "<group>"; };
+		0AC1600617B369990026FEF2 /* PWOMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMainTabBarController.m; sourceTree = "<group>"; };
+		0AC1601B17B36D5A0026FEF2 /* PWOSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOSettingsViewController.h; sourceTree = "<group>"; };
+		0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOSettingsViewController.m; sourceTree = "<group>"; };
+		0AC1602317B36FA20026FEF2 /* PWOMediaItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMediaItemListViewController.h; sourceTree = "<group>"; };
+		0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMediaItemListViewController.m; sourceTree = "<group>"; };
+		0AC1602717B371000026FEF2 /* PWOAggregatedMediaItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOAggregatedMediaItemList.h; sourceTree = "<group>"; };
+		0AC1602817B371000026FEF2 /* PWOAggregatedMediaItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOAggregatedMediaItemList.m; sourceTree = "<group>"; };
+		0AC1602B17B371120026FEF2 /* PWORdioMediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWORdioMediaManager.h; sourceTree = "<group>"; };
+		0AC1602C17B371120026FEF2 /* PWORdioMediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWORdioMediaManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +132,9 @@
 		0AC15FD317B3688D0026FEF2 /* PlayWithOthers */ = {
 			isa = PBXGroup;
 			children = (
+				0AC1600217B368930026FEF2 /* Models */,
+				0AC1600417B3689C0026FEF2 /* Controllers */,
+				0AC1600317B368980026FEF2 /* Views */,
 				0AC15FDC17B3688D0026FEF2 /* PWOAppDelegate.h */,
 				0AC15FDD17B3688D0026FEF2 /* PWOAppDelegate.m */,
 				0AC15FD417B3688D0026FEF2 /* Supporting Files */,
@@ -150,6 +173,45 @@
 				0AC15FF417B3688D0026FEF2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0AC1600217B368930026FEF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0AC1602717B371000026FEF2 /* PWOAggregatedMediaItemList.h */,
+				0AC1602817B371000026FEF2 /* PWOAggregatedMediaItemList.m */,
+				0AC1602B17B371120026FEF2 /* PWORdioMediaManager.h */,
+				0AC1602C17B371120026FEF2 /* PWORdioMediaManager.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0AC1600317B368980026FEF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AC1600417B3689C0026FEF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0AC1600917B369A20026FEF2 /* Tabs */,
+				0AC1600517B369990026FEF2 /* PWOMainTabBarController.h */,
+				0AC1600617B369990026FEF2 /* PWOMainTabBarController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0AC1600917B369A20026FEF2 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				0AC1601B17B36D5A0026FEF2 /* PWOSettingsViewController.h */,
+				0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */,
+				0AC1602317B36FA20026FEF2 /* PWOMediaItemListViewController.h */,
+				0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +326,11 @@
 			files = (
 				0AC15FDA17B3688D0026FEF2 /* main.m in Sources */,
 				0AC15FDE17B3688D0026FEF2 /* PWOAppDelegate.m in Sources */,
+				0AC1600717B369990026FEF2 /* PWOMainTabBarController.m in Sources */,
+				0AC1601D17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */,
+				0AC1602517B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */,
+				0AC1602917B371000026FEF2 /* PWOAggregatedMediaItemList.m in Sources */,
+				0AC1602D17B371120026FEF2 /* PWORdioMediaManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +339,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC15FF917B3688D0026FEF2 /* PlayWithOthersTests.m in Sources */,
+				0AC1600817B369990026FEF2 /* PWOMainTabBarController.m in Sources */,
+				0AC1601E17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */,
+				0AC1602617B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */,
+				0AC1602A17B371000026FEF2 /* PWOAggregatedMediaItemList.m in Sources */,
+				0AC1602E17B371120026FEF2 /* PWORdioMediaManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
