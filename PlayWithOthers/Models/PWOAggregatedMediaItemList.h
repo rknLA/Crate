@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PWOAggregatedMediaItemList : NSObject
+@interface PWOAggregatedMediaItemList : NSObject <UITableViewDataSource>
 
 + (PWOAggregatedMediaItemList *)sharedCollection;
 

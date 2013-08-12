@@ -9,10 +9,14 @@
 #import "PWOMediaItemListViewController.h"
 #import "PWOAggregatedMediaItemList.h"
 
+#import "PWOArtistCell.h"
+#import "PWOAlbumCell.h"
+#import "PWOSongCell.h"
+#import "PWOPlaylistCell.h"
+
 @interface PWOMediaItemListViewController () {
   NSString *_mediaType;
   NSArray *_dataItems;
-  NSArray *_dataSections;
 }
 
 @end
@@ -27,9 +31,14 @@
 
     _mediaType = mediaType;
     _dataItems = [collection itemsOfType:mediaType];
-    _dataSections = [collection sectionsForType:mediaType];
 
     self.title = _mediaType;
+    
+    [self.tableView registerClass:[PWOArtistCell class] forCellReuseIdentifier:@"Artists"];
+    [self.tableView registerClass:[PWOAlbumCell class] forCellReuseIdentifier:@"Albums"];
+    [self.tableView registerClass:[PWOSongCell class] forCellReuseIdentifier:@"Songs"];
+    [self.tableView registerClass:[PWOPlaylistCell class] forCellReuseIdentifier:@"Playlists"];
+
   }
   return self;
 }
@@ -56,26 +65,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+  // Return the number of sections.
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+  // Return the number of rows in the section.
+  return [_dataItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_mediaType forIndexPath:indexPath];
+  
+  // Configure the cell...
+  if (!cell) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_mediaType];
+  }
+  
+  NSString *cellData = [_dataItems objectAtIndex:[indexPath row]];
+  
+  [cell.textLabel setText:cellData];
+  
+  return cell;
 }
 
 /*

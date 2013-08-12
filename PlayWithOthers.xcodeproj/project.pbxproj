@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A733DEE17B96A2300E64D74 /* PWOiPodMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DED17B96A2300E64D74 /* PWOiPodMediaManager.m */; };
+		0A733DEF17B96A2300E64D74 /* PWOiPodMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DED17B96A2300E64D74 /* PWOiPodMediaManager.m */; };
+		0A733DF217B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */; };
+		0A733DF317B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */; };
+		0A733DFB17B9775200E64D74 /* PWOArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DFA17B9775200E64D74 /* PWOArtistCell.m */; };
+		0A733DFC17B9775200E64D74 /* PWOArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DFA17B9775200E64D74 /* PWOArtistCell.m */; };
+		0A733DFF17B9776700E64D74 /* PWOSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DFE17B9776700E64D74 /* PWOSongCell.m */; };
+		0A733E0017B9776700E64D74 /* PWOSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DFE17B9776700E64D74 /* PWOSongCell.m */; };
+		0A733E0317B9777000E64D74 /* PWOAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733E0217B9777000E64D74 /* PWOAlbumCell.m */; };
+		0A733E0417B9777000E64D74 /* PWOAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733E0217B9777000E64D74 /* PWOAlbumCell.m */; };
+		0A733E0717B9777900E64D74 /* PWOPlaylistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733E0617B9777900E64D74 /* PWOPlaylistCell.m */; };
+		0A733E0817B9777900E64D74 /* PWOPlaylistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733E0617B9777900E64D74 /* PWOPlaylistCell.m */; };
 		0AC15FCE17B3688D0026FEF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCD17B3688D0026FEF2 /* UIKit.framework */; };
 		0AC15FD017B3688D0026FEF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCF17B3688D0026FEF2 /* Foundation.framework */; };
 		0AC15FD217B3688D0026FEF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FD117B3688D0026FEF2 /* CoreGraphics.framework */; };
@@ -44,6 +56,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A733DEB17B968F200E64D74 /* PWOMediaManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMediaManagerProtocol.h; sourceTree = "<group>"; };
+		0A733DEC17B96A2300E64D74 /* PWOiPodMediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOiPodMediaManager.h; sourceTree = "<group>"; };
+		0A733DED17B96A2300E64D74 /* PWOiPodMediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOiPodMediaManager.m; sourceTree = "<group>"; };
+		0A733DF017B96E8300E64D74 /* PWOMediaCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMediaCollectionViewController.h; sourceTree = "<group>"; };
+		0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMediaCollectionViewController.m; sourceTree = "<group>"; };
+		0A733DF917B9775200E64D74 /* PWOArtistCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOArtistCell.h; sourceTree = "<group>"; };
+		0A733DFA17B9775200E64D74 /* PWOArtistCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOArtistCell.m; sourceTree = "<group>"; };
+		0A733DFD17B9776700E64D74 /* PWOSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOSongCell.h; sourceTree = "<group>"; };
+		0A733DFE17B9776700E64D74 /* PWOSongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOSongCell.m; sourceTree = "<group>"; };
+		0A733E0117B9777000E64D74 /* PWOAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOAlbumCell.h; sourceTree = "<group>"; };
+		0A733E0217B9777000E64D74 /* PWOAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOAlbumCell.m; sourceTree = "<group>"; };
+		0A733E0517B9777900E64D74 /* PWOPlaylistCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOPlaylistCell.h; sourceTree = "<group>"; };
+		0A733E0617B9777900E64D74 /* PWOPlaylistCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOPlaylistCell.m; sourceTree = "<group>"; };
 		0AC15FCA17B3688D0026FEF2 /* PlayWithOthers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayWithOthers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC15FCD17B3688D0026FEF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC15FCF17B3688D0026FEF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +124,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A733DF817B9771E00E64D74 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A733DF917B9775200E64D74 /* PWOArtistCell.h */,
+				0A733DFA17B9775200E64D74 /* PWOArtistCell.m */,
+				0A733DFD17B9776700E64D74 /* PWOSongCell.h */,
+				0A733DFE17B9776700E64D74 /* PWOSongCell.m */,
+				0A733E0117B9777000E64D74 /* PWOAlbumCell.h */,
+				0A733E0217B9777000E64D74 /* PWOAlbumCell.m */,
+				0A733E0517B9777900E64D74 /* PWOPlaylistCell.h */,
+				0A733E0617B9777900E64D74 /* PWOPlaylistCell.m */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		0AC15FC117B3688D0026FEF2 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +222,9 @@
 				0AC1602817B371000026FEF2 /* PWOAggregatedMediaItemList.m */,
 				0AC1602B17B371120026FEF2 /* PWORdioMediaManager.h */,
 				0AC1602C17B371120026FEF2 /* PWORdioMediaManager.m */,
+				0A733DEB17B968F200E64D74 /* PWOMediaManagerProtocol.h */,
+				0A733DEC17B96A2300E64D74 /* PWOiPodMediaManager.h */,
+				0A733DED17B96A2300E64D74 /* PWOiPodMediaManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +232,7 @@
 		0AC1600317B368980026FEF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A733DF817B9771E00E64D74 /* Table View Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +254,8 @@
 				0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */,
 				0AC1602317B36FA20026FEF2 /* PWOMediaItemListViewController.h */,
 				0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */,
+				0A733DF017B96E8300E64D74 /* PWOMediaCollectionViewController.h */,
+				0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -331,6 +377,12 @@
 				0AC1602517B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */,
 				0AC1602917B371000026FEF2 /* PWOAggregatedMediaItemList.m in Sources */,
 				0AC1602D17B371120026FEF2 /* PWORdioMediaManager.m in Sources */,
+				0A733DEE17B96A2300E64D74 /* PWOiPodMediaManager.m in Sources */,
+				0A733DF217B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */,
+				0A733DFB17B9775200E64D74 /* PWOArtistCell.m in Sources */,
+				0A733DFF17B9776700E64D74 /* PWOSongCell.m in Sources */,
+				0A733E0317B9777000E64D74 /* PWOAlbumCell.m in Sources */,
+				0A733E0717B9777900E64D74 /* PWOPlaylistCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +396,12 @@
 				0AC1602617B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */,
 				0AC1602A17B371000026FEF2 /* PWOAggregatedMediaItemList.m in Sources */,
 				0AC1602E17B371120026FEF2 /* PWORdioMediaManager.m in Sources */,
+				0A733DEF17B96A2300E64D74 /* PWOiPodMediaManager.m in Sources */,
+				0A733DF317B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */,
+				0A733DFC17B9775200E64D74 /* PWOArtistCell.m in Sources */,
+				0A733E0017B9776700E64D74 /* PWOSongCell.m in Sources */,
+				0A733E0417B9777000E64D74 /* PWOAlbumCell.m in Sources */,
+				0A733E0817B9777900E64D74 /* PWOPlaylistCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +566,7 @@
 				0AC15FFE17B3688D0026FEF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC15FFF17B3688D0026FEF2 /* Build configuration list for PBXNativeTarget "PlayWithOthersTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +575,7 @@
 				0AC1600117B3688D0026FEF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
