@@ -1,48 +1,30 @@
 //
-//  PWOMediaItemListViewController.m
+//  PWOMediaItemsTableViewController.m
 //  PlayWithOthers
 //
-//  Created by Kevin Nelson on 8/7/13.
+//  Created by Kevin Nelson on 8/12/13.
 //  Copyright (c) 2013 R. Kevin Nelson. All rights reserved.
 //
 
-#import "PWOMediaItemListViewController.h"
-#import "PWOAggregatedMediaItemList.h"
+#import "PWOMediaItemsTableViewController.h"
 
-#import "PWOArtistCell.h"
-#import "PWOAlbumCell.h"
-#import "PWOSongCell.h"
-#import "PWOPlaylistCell.h"
-
-@interface PWOMediaItemListViewController () {
-  NSString *_mediaType;
-  NSArray *_dataItems;
-}
+@interface PWOMediaItemsTableViewController ()
 
 @end
 
-@implementation PWOMediaItemListViewController
+@implementation PWOMediaItemsTableViewController
 
-- (id)initWithMediaType:(NSString *)mediaType
+@synthesize cellIdentifier = _cellIdentifier;
+
+- (id)initWithStyle:(UITableViewStyle)style
 {
-  self = [super initWithStyle:UITableViewStylePlain];
+  self = [super initWithStyle:style];
   if (self) {
-    PWOAggregatedMediaItemList *collection = [PWOAggregatedMediaItemList sharedCollection];
-
-    _mediaType = mediaType;
-    _dataItems = [collection itemsOfType:mediaType];
-
-    self.title = _mediaType;
-    
-    [self.tableView registerClass:[PWOArtistCell class] forCellReuseIdentifier:@"Artists"];
-    [self.tableView registerClass:[PWOAlbumCell class] forCellReuseIdentifier:@"Albums"];
-    [self.tableView registerClass:[PWOSongCell class] forCellReuseIdentifier:@"Songs"];
-    [self.tableView registerClass:[PWOPlaylistCell class] forCellReuseIdentifier:@"Playlists"];
-
+    // Custom initialization
+    _cellIdentifier = @"Cell";
   }
   return self;
 }
-
 
 - (void)viewDidLoad
 {
@@ -65,28 +47,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  // Return the number of sections.
   return 1;
+  return [_dataSections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  // Return the number of rows in the section.
-  return [_dataItems count];
+  return [self.dataCells count];
+  if ([_dataSections count] > section) {
+    NSDictionary *sectionData = [_dataSections objectAtIndex:section];
+    if (sectionData) {
+      NSNumber *sectionSize = [sectionData objectForKey:@"length"];
+      return [sectionSize integerValue];
+    }
+  }
+
+  // this is an error case, i'm guessing?
+  return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_mediaType forIndexPath:indexPath];
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
   
-  // Configure the cell...
-  if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_mediaType];
+  NSDictionary *cellData = [self.dataCells objectAtIndex:[indexPath row]];
+  
+  if (cellData) {
+    NSString *title = [cellData objectForKey:@"title"];
+    NSString *subtitle = [cellData objectForKey:@"subtitle"];
+    [cell.textLabel setText:title];
   }
-  
-  NSString *cellData = [_dataItems objectAtIndex:[indexPath row]];
-  
-  [cell.textLabel setText:cellData];
   
   return cell;
 }

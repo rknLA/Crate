@@ -10,6 +10,6 @@
 
 #import "PWOMediaManagerProtocol.h"
 
-@interface PWOiPodMediaManager : NSObject <PWOMediaManagerProtocol>
+@interface PWOiPodMediaManager : NSObject <PWOMediaManager>
 
 @end

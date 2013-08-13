@@ -52,7 +52,7 @@ static PWOAggregatedMediaItemList *_sharedCollection = nil;
   }
   
   NSMutableArray *aggregateItems = [[NSMutableArray alloc] initWithCapacity:20];
-  for (id<PWOMediaManagerProtocol> source in _mediaSources) {
+  for (id<PWOMediaManager> source in _mediaSources) {
     NSArray *queryResults;
     if (requiresArg) {
       queryResults = [source performSelector:delegateMethod withObject:methodArg];
@@ -70,5 +70,55 @@ static PWOAggregatedMediaItemList *_sharedCollection = nil;
 {
   return @[@"a", @"b"];
 }
+
+#pragma mark - Media Manager protocol methods
+
+- (NSArray *)artistsInLibrary
+{
+  NSMutableArray *aggregateArtists = [NSMutableArray arrayWithCapacity:20];
+  for (id<PWOMediaManager>source in _mediaSources) {
+    [aggregateArtists addObjectsFromArray:[source artistsInLibrary]];
+  }
+  return [NSArray arrayWithArray:aggregateArtists];
+}
+
+- (NSArray *)playlistsInLibrary
+{
+  NSMutableArray *aggregatePlaylists = [NSMutableArray arrayWithCapacity:20];
+  for (id<PWOMediaManager>source in _mediaSources) {
+    [aggregatePlaylists addObjectsFromArray:[source playlistsInLibrary]];
+  }
+  return [NSArray arrayWithArray:aggregatePlaylists];
+}
+
+- (NSArray *)albumsByArtist:(NSString *)artist
+{
+  NSMutableArray *aggregateAlbums = [NSMutableArray arrayWithCapacity:20];
+  for (id<PWOMediaManager>source in _mediaSources) {
+    [aggregateAlbums addObjectsFromArray:[source albumsByArtist:artist]];
+  }
+  return [NSArray arrayWithArray:aggregateAlbums];
+}
+
+- (NSArray *)songsByArtist:(NSString *)artist
+{
+  return nil;
+}
+
+- (NSArray *)songsOnAlbum:(NSString *)album
+{
+  return nil;
+}
+
+- (NSArray *)songsInPlaylist:(NSString *)playlist
+{
+  return nil;
+}
+
+#pragma mark - Table Sections
+//- (NSArray *)artistSectionsInLibrary;
+//- (NSArray *)playlistSectionsInLibrary;
+//- (NSArray *)albumSectionsByArtist:(NSString *)artist;
+//- (NSArray *)songSectionsByArtist:(NSString *)artist;
 
 @end

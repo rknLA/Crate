@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PWOMediaManagerProtocol <NSObject>
+@protocol PWOMediaManager <NSObject>
 
 - (NSArray *)artistsInLibrary;
 

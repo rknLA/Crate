@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PWOAggregatedMediaItemList : NSObject <UITableViewDataSource>
+#import "PWOMediaManagerProtocol.h"
+
+@interface PWOAggregatedMediaItemList : NSObject <PWOMediaManager>
 
 + (PWOAggregatedMediaItemList *)sharedCollection;
 
 - (NSArray *)itemsOfType:(NSString*)mediaType;
 - (NSArray *)sectionsForType:(NSString *)mediaType;
+
+- (NSArray *)artistSectionsInLibrary;
+- (NSArray *)playlistSectionsInLibrary;
+- (NSArray *)albumSectionsByArtist:(NSString *)artist;
+- (NSArray *)songSectionsByArtist:(NSString *)artist;
 
 @end

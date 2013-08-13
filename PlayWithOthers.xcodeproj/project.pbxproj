@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A733DF217B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */; };
-		0A733DF317B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */; };
+		0A0DB67A17B99D200033F4E7 /* PWOMediaItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB67917B99D200033F4E7 /* PWOMediaItemsTableViewController.m */; };
+		0A0DB67B17B99D200033F4E7 /* PWOMediaItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB67917B99D200033F4E7 /* PWOMediaItemsTableViewController.m */; };
+		0A0DB67E17B99D950033F4E7 /* PWOMediaNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB67D17B99D950033F4E7 /* PWOMediaNavigationController.m */; };
+		0A0DB67F17B99D950033F4E7 /* PWOMediaNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB67D17B99D950033F4E7 /* PWOMediaNavigationController.m */; };
+		0A0DB68217B9A15C0033F4E7 /* PWOArtistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB68117B9A15C0033F4E7 /* PWOArtistsViewController.m */; };
+		0A0DB68317B9A15C0033F4E7 /* PWOArtistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB68117B9A15C0033F4E7 /* PWOArtistsViewController.m */; };
+		0A0DB68917B9CE4F0033F4E7 /* PWOAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB68817B9CE4F0033F4E7 /* PWOAlbumsViewController.m */; };
+		0A0DB68A17B9CE4F0033F4E7 /* PWOAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB68817B9CE4F0033F4E7 /* PWOAlbumsViewController.m */; };
 		0A733DFB17B9775200E64D74 /* PWOArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DFA17B9775200E64D74 /* PWOArtistCell.m */; };
 		0A733DFC17B9775200E64D74 /* PWOArtistCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DFA17B9775200E64D74 /* PWOArtistCell.m */; };
 		0A733DFF17B9776700E64D74 /* PWOSongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733DFE17B9776700E64D74 /* PWOSongCell.m */; };
@@ -42,8 +48,6 @@
 		0AC1600817B369990026FEF2 /* PWOMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1600617B369990026FEF2 /* PWOMainTabBarController.m */; };
 		0AC1601D17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */; };
 		0AC1601E17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */; };
-		0AC1602517B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */; };
-		0AC1602617B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A733DF017B96E8300E64D74 /* PWOMediaCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMediaCollectionViewController.h; sourceTree = "<group>"; };
-		0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMediaCollectionViewController.m; sourceTree = "<group>"; };
+		0A0DB67817B99D200033F4E7 /* PWOMediaItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMediaItemsTableViewController.h; sourceTree = "<group>"; };
+		0A0DB67917B99D200033F4E7 /* PWOMediaItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMediaItemsTableViewController.m; sourceTree = "<group>"; };
+		0A0DB67C17B99D950033F4E7 /* PWOMediaNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMediaNavigationController.h; sourceTree = "<group>"; };
+		0A0DB67D17B99D950033F4E7 /* PWOMediaNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMediaNavigationController.m; sourceTree = "<group>"; };
+		0A0DB68017B9A15C0033F4E7 /* PWOArtistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOArtistsViewController.h; sourceTree = "<group>"; };
+		0A0DB68117B9A15C0033F4E7 /* PWOArtistsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOArtistsViewController.m; sourceTree = "<group>"; };
+		0A0DB68717B9CE4F0033F4E7 /* PWOAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOAlbumsViewController.h; sourceTree = "<group>"; };
+		0A0DB68817B9CE4F0033F4E7 /* PWOAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOAlbumsViewController.m; sourceTree = "<group>"; };
 		0A733DF917B9775200E64D74 /* PWOArtistCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOArtistCell.h; sourceTree = "<group>"; };
 		0A733DFA17B9775200E64D74 /* PWOArtistCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOArtistCell.m; sourceTree = "<group>"; };
 		0A733DFD17B9776700E64D74 /* PWOSongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOSongCell.h; sourceTree = "<group>"; };
@@ -96,10 +106,8 @@
 		0AC15FF817B3688D0026FEF2 /* PlayWithOthersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayWithOthersTests.m; sourceTree = "<group>"; };
 		0AC1600517B369990026FEF2 /* PWOMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMainTabBarController.h; sourceTree = "<group>"; };
 		0AC1600617B369990026FEF2 /* PWOMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMainTabBarController.m; sourceTree = "<group>"; };
-		0AC1601B17B36D5A0026FEF2 /* PWOSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOSettingsViewController.h; sourceTree = "<group>"; };
-		0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOSettingsViewController.m; sourceTree = "<group>"; };
-		0AC1602317B36FA20026FEF2 /* PWOMediaItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWOMediaItemListViewController.h; sourceTree = "<group>"; };
-		0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWOMediaItemListViewController.m; sourceTree = "<group>"; };
+		0AC1601B17B36D5A0026FEF2 /* PWOSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PWOSettingsViewController.h; path = Tabs/PWOSettingsViewController.h; sourceTree = "<group>"; };
+		0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PWOSettingsViewController.m; path = Tabs/PWOSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0DB67317B99BF40033F4E7 /* MediaLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				0A0DB67C17B99D950033F4E7 /* PWOMediaNavigationController.h */,
+				0A0DB67D17B99D950033F4E7 /* PWOMediaNavigationController.m */,
+				0A0DB67817B99D200033F4E7 /* PWOMediaItemsTableViewController.h */,
+				0A0DB67917B99D200033F4E7 /* PWOMediaItemsTableViewController.m */,
+				0A0DB68017B9A15C0033F4E7 /* PWOArtistsViewController.h */,
+				0A0DB68117B9A15C0033F4E7 /* PWOArtistsViewController.m */,
+				0A0DB68717B9CE4F0033F4E7 /* PWOAlbumsViewController.h */,
+				0A0DB68817B9CE4F0033F4E7 /* PWOAlbumsViewController.m */,
+			);
+			path = MediaLibrary;
+			sourceTree = "<group>";
+		};
 		0A733DF817B9771E00E64D74 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,24 +275,13 @@
 		0AC1600417B3689C0026FEF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0AC1600917B369A20026FEF2 /* Tabs */,
+				0AC1601B17B36D5A0026FEF2 /* PWOSettingsViewController.h */,
+				0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */,
+				0A0DB67317B99BF40033F4E7 /* MediaLibrary */,
 				0AC1600517B369990026FEF2 /* PWOMainTabBarController.h */,
 				0AC1600617B369990026FEF2 /* PWOMainTabBarController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0AC1600917B369A20026FEF2 /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				0AC1601B17B36D5A0026FEF2 /* PWOSettingsViewController.h */,
-				0AC1601C17B36D5A0026FEF2 /* PWOSettingsViewController.m */,
-				0AC1602317B36FA20026FEF2 /* PWOMediaItemListViewController.h */,
-				0AC1602417B36FA20026FEF2 /* PWOMediaItemListViewController.m */,
-				0A733DF017B96E8300E64D74 /* PWOMediaCollectionViewController.h */,
-				0A733DF117B96E8300E64D74 /* PWOMediaCollectionViewController.m */,
-			);
-			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,8 +398,6 @@
 				0AC15FDE17B3688D0026FEF2 /* PWOAppDelegate.m in Sources */,
 				0AC1600717B369990026FEF2 /* PWOMainTabBarController.m in Sources */,
 				0AC1601D17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */,
-				0AC1602517B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */,
-				0A733DF217B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */,
 				0A733DFB17B9775200E64D74 /* PWOArtistCell.m in Sources */,
 				0A733DFF17B9776700E64D74 /* PWOSongCell.m in Sources */,
 				0A733E0317B9777000E64D74 /* PWOAlbumCell.m in Sources */,
@@ -395,6 +405,10 @@
 				0A733E1317B97ADF00E64D74 /* PWOAggregatedMediaItemList.m in Sources */,
 				0A733E1517B97ADF00E64D74 /* PWOiPodMediaManager.m in Sources */,
 				0A733E1717B97ADF00E64D74 /* PWORdioMediaManager.m in Sources */,
+				0A0DB67A17B99D200033F4E7 /* PWOMediaItemsTableViewController.m in Sources */,
+				0A0DB67E17B99D950033F4E7 /* PWOMediaNavigationController.m in Sources */,
+				0A0DB68217B9A15C0033F4E7 /* PWOArtistsViewController.m in Sources */,
+				0A0DB68917B9CE4F0033F4E7 /* PWOAlbumsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,8 +419,6 @@
 				0AC15FF917B3688D0026FEF2 /* PlayWithOthersTests.m in Sources */,
 				0AC1600817B369990026FEF2 /* PWOMainTabBarController.m in Sources */,
 				0AC1601E17B36D5A0026FEF2 /* PWOSettingsViewController.m in Sources */,
-				0AC1602617B36FA20026FEF2 /* PWOMediaItemListViewController.m in Sources */,
-				0A733DF317B96E8300E64D74 /* PWOMediaCollectionViewController.m in Sources */,
 				0A733DFC17B9775200E64D74 /* PWOArtistCell.m in Sources */,
 				0A733E0017B9776700E64D74 /* PWOSongCell.m in Sources */,
 				0A733E0417B9777000E64D74 /* PWOAlbumCell.m in Sources */,
@@ -414,6 +426,10 @@
 				0A733E1417B97ADF00E64D74 /* PWOAggregatedMediaItemList.m in Sources */,
 				0A733E1617B97ADF00E64D74 /* PWOiPodMediaManager.m in Sources */,
 				0A733E1817B97ADF00E64D74 /* PWORdioMediaManager.m in Sources */,
+				0A0DB67B17B99D200033F4E7 /* PWOMediaItemsTableViewController.m in Sources */,
+				0A0DB67F17B99D950033F4E7 /* PWOMediaNavigationController.m in Sources */,
+				0A0DB68317B9A15C0033F4E7 /* PWOArtistsViewController.m in Sources */,
+				0A0DB68A17B9CE4F0033F4E7 /* PWOAlbumsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

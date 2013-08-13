@@ -7,8 +7,11 @@
 //
 
 #import "PWOMainTabBarController.h"
-#import "PWOMediaCollectionViewController.h"
+#import "PWOMediaNavigationController.h"
 #import "PWOSettingsViewController.h"
+
+#import "PWOArtistsViewController.h"
+#import "PWOAlbumsViewController.h"
 
 @interface PWOMainTabBarController ()
 
@@ -30,10 +33,10 @@
   [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-  PWOMediaCollectionViewController *artistsTab = [[PWOMediaCollectionViewController alloc] initWithMediaType:@"Artists"];
-  PWOMediaCollectionViewController *albumsTab = [[PWOMediaCollectionViewController alloc] initWithMediaType:@"Albums"];
-  PWOMediaCollectionViewController *songsTab = [[PWOMediaCollectionViewController alloc] initWithMediaType:@"Songs"];
-  PWOMediaCollectionViewController *playlistsTab = [[PWOMediaCollectionViewController alloc] initWithMediaType:@"Playlists"];
+  PWOMediaNavigationController *artistsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOArtistsViewController alloc] init]];
+  PWOMediaNavigationController *albumsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOAlbumsViewController alloc] initWithArtist:nil]];
+  PWOMediaNavigationController *songsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOArtistsViewController alloc] init]];
+  PWOMediaNavigationController *playlistsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOArtistsViewController alloc] init]];
 
   PWOSettingsViewController *settings = [[PWOSettingsViewController alloc] init];
   

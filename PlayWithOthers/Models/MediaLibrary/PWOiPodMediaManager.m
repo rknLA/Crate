@@ -23,7 +23,8 @@
   if (collections) {
     for (MPMediaItemCollection *collection in collections) {
       NSString *artist = [[collection representativeItem] valueForProperty:MPMediaItemPropertyArtist];
-      [artists addObject:artist];
+      NSDictionary *artistRow = @{@"title": artist};
+      [artists addObject:artistRow];
     }
   }
   return [NSArray arrayWithArray:artists];
@@ -49,7 +50,10 @@
   if (collections) {
     for (MPMediaItemCollection *collection in collections) {
       NSString *album = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
-      [albums addObject:album];
+      NSString *albumArtist = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+      NSDictionary *albumRow = @{@"title": album,
+                                 @"subtitle": albumArtist};
+      [albums addObject:albumRow];
     }
   }
   return [NSArray arrayWithArray:albums];
