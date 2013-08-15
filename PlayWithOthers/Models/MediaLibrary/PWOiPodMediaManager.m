@@ -87,16 +87,21 @@
     MPMediaPropertyPredicate *albumFilter = [MPMediaPropertyPredicate predicateWithValue:album forProperty:MPMediaItemPropertyAlbumTitle comparisonType:MPMediaPredicateComparisonEqualTo];
     [query addFilterPredicate:albumFilter];
   }
-  
+
   NSArray *collections = [query collections];
   NSMutableArray *songs = [NSMutableArray arrayWithCapacity:20];
   if (collections) {
     for (MPMediaItemCollection *collection in collections) {
       NSString *song = [[collection representativeItem] valueForProperty:MPMediaItemPropertyTitle];
-      [songs addObject:song];
+      NSString *album = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
+      NSString *albumArtist = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+      NSDictionary *albumRow = @{@"title": song,
+                                 @"subtitle": albumArtist};
+      [songs addObject:albumRow];
     }
   }
   return [NSArray arrayWithArray:songs];
+
 }
 
 - (NSDictionary *)songsInPlaylist:(NSString *)playlist

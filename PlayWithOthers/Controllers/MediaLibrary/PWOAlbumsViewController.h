@@ -8,7 +8,7 @@
 
 #import "PWOMediaItemsTableViewController.h"
 
-@interface PWOAlbumsViewController : PWOMediaItemsTableViewController
+@interface PWOAlbumsViewController : PWOMediaItemsTableViewController <UITableViewDelegate>
 
 @property (strong, nonatomic) NSString *artist;
 

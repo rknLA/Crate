@@ -107,7 +107,11 @@ static PWOAggregatedMediaItemList *_sharedCollection = nil;
 
 - (NSArray *)songsOnAlbum:(NSString *)album
 {
-  return nil;
+  NSMutableArray *aggregateSongs = [NSMutableArray arrayWithCapacity:20];
+  for (id<PWOMediaManager>source in _mediaSources) {
+    [aggregateSongs addObjectsFromArray:[source songsOnAlbum:album]];
+  }
+  return [NSArray arrayWithArray:aggregateSongs];
 }
 
 - (NSArray *)songsInPlaylist:(NSString *)playlist

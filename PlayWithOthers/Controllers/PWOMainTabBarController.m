@@ -12,6 +12,7 @@
 
 #import "PWOArtistsViewController.h"
 #import "PWOAlbumsViewController.h"
+#import "PWOAlbumViewController.h" //fake SongsViewController
 
 @interface PWOMainTabBarController ()
 
@@ -35,7 +36,7 @@
 
   PWOMediaNavigationController *artistsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOArtistsViewController alloc] init]];
   PWOMediaNavigationController *albumsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOAlbumsViewController alloc] initWithArtist:nil]];
-  PWOMediaNavigationController *songsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOArtistsViewController alloc] init]];
+  PWOMediaNavigationController *songsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOAlbumViewController alloc] initWithArtist:nil andAlbumTitle:nil]];
   PWOMediaNavigationController *playlistsTab = [[PWOMediaNavigationController alloc] initWithRootViewController:[[PWOArtistsViewController alloc] init]];
 
   PWOSettingsViewController *settings = [[PWOSettingsViewController alloc] init];
