@@ -1,7 +1,9 @@
-PlaysWithOthers
----------------
+Crate
+-----
 
-PlaysWithOthers is an open source iPhone app that lets you play music from iTunes and Rdio together.
+Crate is an open source record crate for your iPhone.
+
+It lets you organize, view, and play music from your iPod Library and Rdio together as one.
 
 It is currently a work in progress and not yet functional.
 
