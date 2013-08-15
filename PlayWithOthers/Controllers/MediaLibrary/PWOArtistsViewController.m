@@ -10,6 +10,7 @@
 
 #import "PWOAggregatedMediaItemList.h"
 #import "PWOArtistCell.h"
+#import "PWOAlbumsViewController.h"
 
 @interface PWOArtistsViewController ()
 
@@ -26,6 +27,7 @@
     self.cellIdentifier = @"Artist";
     self.title = @"Artists";
     [self.tableView registerClass:[PWOArtistCell class] forCellReuseIdentifier:self.cellIdentifier];
+    [self.tableView setDelegate:self];
   }
   return self;
 }
@@ -55,6 +57,15 @@
   PWOAggregatedMediaItemList *collection = [PWOAggregatedMediaItemList sharedCollection];
   NSArray *artistSections = [collection artistSectionsInLibrary];
   return artistSections;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  NSString *artistName = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
+  PWOAlbumsViewController *artistAlbums = [[PWOAlbumsViewController alloc] initWithArtist:artistName];
+  [self.navigationController pushViewController:artistAlbums animated:YES];
 }
 
 @end

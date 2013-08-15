@@ -27,7 +27,12 @@
   if (self) {
     // Custom initialization
     self.cellIdentifier = @"Album";
-    self.title = @"Albums";
+    if (artist) {
+      self.title = artist;
+    } else {
+      self.title = @"Albums";
+    }
+    _artist = artist;
     [self.tableView registerClass:[PWOAlbumCell class] forCellReuseIdentifier:self.cellIdentifier];
   }
   return self;

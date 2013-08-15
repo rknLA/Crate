@@ -8,6 +8,6 @@
 
 #import "PWOMediaItemsTableViewController.h"
 
-@interface PWOArtistsViewController : PWOMediaItemsTableViewController
+@interface PWOArtistsViewController : PWOMediaItemsTableViewController <UITableViewDelegate>
 
 @end
