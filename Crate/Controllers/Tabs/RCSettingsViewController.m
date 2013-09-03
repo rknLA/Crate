@@ -7,6 +7,7 @@
 //
 
 #import "RCSettingsViewController.h"
+#import "RCRdio.h"
 
 @interface RCSettingsViewController ()
 
@@ -19,21 +20,30 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     // Custom initialization
-    self.title = @"Settings";
+    [self setup];
   }
   return self;
 }
 
-- (void)viewDidLoad
+- (void)setup
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  self.title = @"Settings";
+  UIButton *connectRdioButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  [connectRdioButton setTitle:@"Connect Rdio" forState:UIControlStateNormal];
+  CGRect buttonFrame = CGRectMake(20, 20, 100, 40);
+  [connectRdioButton setFrame:buttonFrame];
+  [connectRdioButton addTarget:self action:@selector(linkRdioPressed) forControlEvents:UIControlEventTouchUpInside];
+  
+  [self.view addSubview:connectRdioButton];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - UI Handlers
+- (void)linkRdioPressed
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  Rdio *sharedRdio = [RCRdio sharedRdio];
+  [sharedRdio authorizeFromController:self];
 }
+
+
 
 @end

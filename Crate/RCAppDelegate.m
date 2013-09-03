@@ -8,6 +8,7 @@
 
 #import "RCAppDelegate.h"
 #import "RCMainTabBarController.h"
+#import "RCRdio.h"
 
 @implementation RCAppDelegate
 
@@ -15,6 +16,10 @@
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
+  
+  // initialize Rdio
+  [RCRdio sharedRdio];
+  
   self.window.backgroundColor = [UIColor whiteColor];
   
   self.window.rootViewController = [[RCMainTabBarController alloc] init];

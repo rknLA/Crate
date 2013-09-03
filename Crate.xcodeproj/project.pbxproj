@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A07914717D5A66500CC2065 /* RCRdio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A07914617D5A66500CC2065 /* RCRdio.m */; };
+		0A07914817D5A66500CC2065 /* RCRdio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A07914617D5A66500CC2065 /* RCRdio.m */; };
+		0A07914A17D5A71800CC2065 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07914917D5A71800CC2065 /* Rdio.framework */; };
+		0A07914B17D5A71800CC2065 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07914917D5A71800CC2065 /* Rdio.framework */; };
+		0A07914D17D5A72F00CC2065 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07914C17D5A72F00CC2065 /* CFNetwork.framework */; };
+		0A07914F17D5A73500CC2065 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07914E17D5A73500CC2065 /* SystemConfiguration.framework */; };
+		0A07915117D5A73A00CC2065 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07915017D5A73A00CC2065 /* AudioToolbox.framework */; };
+		0A07915317D5A73E00CC2065 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A07915217D5A73E00CC2065 /* Security.framework */; };
 		0A0DB67A17B99D200033F4E7 /* RCMediaItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB67917B99D200033F4E7 /* RCMediaItemsTableViewController.m */; };
 		0A0DB67B17B99D200033F4E7 /* RCMediaItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB67917B99D200033F4E7 /* RCMediaItemsTableViewController.m */; };
 		0A0DB67E17B99D950033F4E7 /* RCMediaNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0DB67D17B99D950033F4E7 /* RCMediaNavigationController.m */; };
@@ -63,6 +71,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A07914517D5A66500CC2065 /* RCRdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdio.h; sourceTree = "<group>"; };
+		0A07914617D5A66500CC2065 /* RCRdio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdio.m; sourceTree = "<group>"; };
+		0A07914917D5A71800CC2065 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
+		0A07914C17D5A72F00CC2065 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0A07914E17D5A73500CC2065 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0A07915017D5A73A00CC2065 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0A07915217D5A73E00CC2065 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0A07915417D5A7CF00CC2065 /* RCRdioCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioCredentials.h; sourceTree = "<group>"; };
 		0A0DB67817B99D200033F4E7 /* RCMediaItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMediaItemsTableViewController.h; sourceTree = "<group>"; };
 		0A0DB67917B99D200033F4E7 /* RCMediaItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMediaItemsTableViewController.m; sourceTree = "<group>"; };
 		0A0DB67C17B99D950033F4E7 /* RCMediaNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMediaNavigationController.h; sourceTree = "<group>"; };
@@ -119,10 +135,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A07915317D5A73E00CC2065 /* Security.framework in Frameworks */,
+				0A07915117D5A73A00CC2065 /* AudioToolbox.framework in Frameworks */,
+				0A07914F17D5A73500CC2065 /* SystemConfiguration.framework in Frameworks */,
+				0A07914D17D5A72F00CC2065 /* CFNetwork.framework in Frameworks */,
 				0A733E0A17B97A5B00E64D74 /* MediaPlayer.framework in Frameworks */,
 				0AC15FCE17B3688D0026FEF2 /* UIKit.framework in Frameworks */,
 				0AC15FD017B3688D0026FEF2 /* Foundation.framework in Frameworks */,
 				0AC15FD217B3688D0026FEF2 /* CoreGraphics.framework in Frameworks */,
+				0A07914A17D5A71800CC2065 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,12 +154,23 @@
 				0AC15FEC17B3688D0026FEF2 /* SenTestingKit.framework in Frameworks */,
 				0AC15FED17B3688D0026FEF2 /* UIKit.framework in Frameworks */,
 				0AC15FEE17B3688D0026FEF2 /* Foundation.framework in Frameworks */,
+				0A07914B17D5A71800CC2065 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A07914417D5A63600CC2065 /* Rdio */ = {
+			isa = PBXGroup;
+			children = (
+				0A07914517D5A66500CC2065 /* RCRdio.h */,
+				0A07914617D5A66500CC2065 /* RCRdio.m */,
+				0A07915417D5A7CF00CC2065 /* RCRdioCredentials.h */,
+			);
+			path = Rdio;
+			sourceTree = "<group>";
+		};
 		0A0DB67317B99BF40033F4E7 /* MediaLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +239,11 @@
 		0AC15FCC17B3688D0026FEF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A07915217D5A73E00CC2065 /* Security.framework */,
+				0A07915017D5A73A00CC2065 /* AudioToolbox.framework */,
+				0A07914E17D5A73500CC2065 /* SystemConfiguration.framework */,
+				0A07914C17D5A72F00CC2065 /* CFNetwork.framework */,
+				0A07914917D5A71800CC2065 /* Rdio.framework */,
 				0A733E0917B97A5B00E64D74 /* MediaPlayer.framework */,
 				0AC15FCD17B3688D0026FEF2 /* UIKit.framework */,
 				0AC15FCF17B3688D0026FEF2 /* Foundation.framework */,
@@ -265,6 +302,7 @@
 		0AC1600217B368930026FEF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0A07914417D5A63600CC2065 /* Rdio */,
 				0A733E0B17B97A7C00E64D74 /* MediaLibrary */,
 			);
 			path = Models;
@@ -416,6 +454,7 @@
 				0A0DB68217B9A15C0033F4E7 /* RCArtistsViewController.m in Sources */,
 				0A0DB68917B9CE4F0033F4E7 /* RCAlbumsViewController.m in Sources */,
 				0AE8B87617BCA37A00B9E9EB /* RCAlbumViewController.m in Sources */,
+				0A07914717D5A66500CC2065 /* RCRdio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +477,7 @@
 				0A0DB68317B9A15C0033F4E7 /* RCArtistsViewController.m in Sources */,
 				0A0DB68A17B9CE4F0033F4E7 /* RCAlbumsViewController.m in Sources */,
 				0AE8B87717BCA37A00B9E9EB /* RCAlbumViewController.m in Sources */,
+				0A07914817D5A66500CC2065 /* RCRdio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,9 +570,14 @@
 		0AC15FFD17B3688D0026FEF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crate/Crate-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Crate/Crate-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = Crate;
 				WRAPPER_EXTENSION = app;
 			};
@@ -541,9 +586,14 @@
 		0AC15FFE17B3688D0026FEF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crate/Crate-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Crate/Crate-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = Crate;
 				WRAPPER_EXTENSION = app;
 			};
@@ -556,6 +606,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlayWithOthers/PlayWithOthers-Prefix.pch";
@@ -573,6 +624,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlayWithOthers/PlayWithOthers-Prefix.pch";
