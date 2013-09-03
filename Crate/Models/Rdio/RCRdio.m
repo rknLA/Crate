@@ -9,27 +9,60 @@
 #import "RCRdio.h"
 #import "RCRdioCredentials.h"
 
+static NSString * const kRdioAccessTokenDefaultsKey = @"rdioAccessToken";
+
+@interface RCRdio() {
+  NSString *_accessToken;
+}
+
+@property (strong, nonatomic) Rdio *rdio;
+
+@end
+
 @implementation RCRdio
 
+@synthesize rdio = _rdio;
+
+// singleton
 + (Rdio *)sharedRdio
 {
-  static Rdio *_rdioInstance = nil;
   static RCRdio *_rdioWrapper = nil;
   if (_rdioWrapper == nil) {
     _rdioWrapper = [[RCRdio alloc] init];
   }
+  
+  return _rdioWrapper.rdio;
+}
 
-  if (_rdioInstance == nil) {
-    _rdioInstance = [[Rdio alloc] initWithConsumerKey:RDIO_CONSUMER_KEY andSecret:RDIO_CONSUMER_SECRET delegate:_rdioWrapper];
+#pragma mark - Lifecycle
+- (id)init
+{
+  self = [super init];
+  if (self) {
+    _rdio = [[Rdio alloc] initWithConsumerKey:RDIO_CONSUMER_KEY andSecret:RDIO_CONSUMER_SECRET delegate:self];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token = [defaults stringForKey:kRdioAccessTokenDefaultsKey];
+    if (token) {
+      _accessToken = token;
+      [_rdio authorizeUsingAccessToken:_accessToken];
+    }
   }
-
-  return _rdioInstance;
+  return self;
 }
 
 #pragma mark - Rdio Delegate methods
 - (void)rdioDidAuthorizeUser:(NSDictionary *)user withAccessToken:(NSString *)accessToken
 {
   NSLog(@"rdio authenticated");
+  if (![_accessToken isEqualToString:accessToken]) {
+    NSLog(@"Saving access token");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:accessToken forKey:kRdioAccessTokenDefaultsKey];
+    [defaults synchronize];
+    _accessToken = [defaults stringForKey:kRdioAccessTokenDefaultsKey];
+  } else {
+    NSLog(@"used stored access token");
+  }
 }
 
 - (void)rdioAuthorizationCancelled
