@@ -51,6 +51,9 @@
     for (MPMediaItemCollection *collection in collections) {
       NSString *album = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
       NSString *albumArtist = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+      if (!albumArtist) {
+        albumArtist = [[collection representativeItem] valueForProperty:MPMediaItemPropertyArtist];
+      }
       NSDictionary *albumRow = @{@"title": album,
                                  @"subtitle": albumArtist};
       [albums addObject:albumRow];
@@ -59,7 +62,7 @@
   return [NSArray arrayWithArray:albums];
 }
 
-- (NSDictionary *)songsByArtist:(NSString *)artist
+- (NSArray *)songsByArtist:(NSString *)artist
 {
   MPMediaQuery *query = [MPMediaQuery songsQuery];
   
@@ -79,7 +82,7 @@
   return [NSArray arrayWithArray:songs];
 }
 
-- (NSDictionary *)songsOnAlbum:(NSString *)album
+- (NSArray *)songsOnAlbum:(NSString *)album
 {
   MPMediaQuery *query = [MPMediaQuery songsQuery];
   
@@ -94,7 +97,15 @@
     for (MPMediaItemCollection *collection in collections) {
       NSString *song = [[collection representativeItem] valueForProperty:MPMediaItemPropertyTitle];
       NSString *album = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
+      
       NSString *albumArtist = [[collection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+      if (!albumArtist) {
+        albumArtist = [[collection representativeItem] valueForProperty:MPMediaItemPropertyArtist];
+      }
+
+      if (!song || !albumArtist) {
+        NSLog(@"umm...");
+      }
       NSDictionary *albumRow = @{@"title": song,
                                  @"subtitle": albumArtist};
       [songs addObject:albumRow];
