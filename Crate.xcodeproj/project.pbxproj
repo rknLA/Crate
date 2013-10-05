@@ -38,6 +38,7 @@
 		0A733E1617B97ADF00E64D74 /* RCiPodMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733E0F17B97ADF00E64D74 /* RCiPodMediaManager.m */; };
 		0A733E1717B97ADF00E64D74 /* RCRdioMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733E1217B97ADF00E64D74 /* RCRdioMediaManager.m */; };
 		0A733E1817B97ADF00E64D74 /* RCRdioMediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A733E1217B97ADF00E64D74 /* RCRdioMediaManager.m */; };
+		0A8184C8180042CE0088CD62 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A8184C6180042CE0088CD62 /* Model.xcdatamodeld */; };
 		0AC15FCE17B3688D0026FEF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCD17B3688D0026FEF2 /* UIKit.framework */; };
 		0AC15FD017B3688D0026FEF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCF17B3688D0026FEF2 /* Foundation.framework */; };
 		0AC15FD217B3688D0026FEF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FD117B3688D0026FEF2 /* CoreGraphics.framework */; };
@@ -103,6 +104,7 @@
 		0A733E1017B97ADF00E64D74 /* RCMediaManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMediaManagerProtocol.h; sourceTree = "<group>"; };
 		0A733E1117B97ADF00E64D74 /* RCRdioMediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioMediaManager.h; sourceTree = "<group>"; };
 		0A733E1217B97ADF00E64D74 /* RCRdioMediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioMediaManager.m; sourceTree = "<group>"; };
+		0A8184C7180042CE0088CD62 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0AC15FCA17B3688D0026FEF2 /* Crate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC15FCD17B3688D0026FEF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC15FCF17B3688D0026FEF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,6 +169,7 @@
 				0A07914517D5A66500CC2065 /* RCRdio.h */,
 				0A07914617D5A66500CC2065 /* RCRdio.m */,
 				0A07915417D5A7CF00CC2065 /* RCRdioCredentials.h */,
+				0A8184C6180042CE0088CD62 /* Model.xcdatamodeld */,
 			);
 			path = Rdio;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				0AC1600717B369990026FEF2 /* RCMainTabBarController.m in Sources */,
 				0AC1601D17B36D5A0026FEF2 /* RCSettingsViewController.m in Sources */,
 				0A733DFB17B9775200E64D74 /* RCArtistCell.m in Sources */,
+				0A8184C8180042CE0088CD62 /* Model.xcdatamodeld in Sources */,
 				0A733DFF17B9776700E64D74 /* RCSongCell.m in Sources */,
 				0A733E0317B9777000E64D74 /* RCAlbumCell.m in Sources */,
 				0A733E0717B9777900E64D74 /* RCPlaylistCell.m in Sources */,
@@ -666,6 +670,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A8184C6180042CE0088CD62 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A8184C7180042CE0088CD62 /* Model.xcdatamodel */,
+			);
+			currentVersion = 0A8184C7180042CE0088CD62 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0AC15FC217B3688D0026FEF2 /* Project object */;
 }
