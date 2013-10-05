@@ -85,6 +85,8 @@ static const int RDIO_REQUEST_INCREMENT = 50;
     // the update method continues to call itself in pages until artists are finished,
     // then it kicks off the same update process for albums, and then tracks.
     [self updateArtistsFromIndex:_currentArtistIndex];
+  } else {
+    NSLog(@"Not updating, because we're already up to date.");
   }
 }
 
@@ -123,7 +125,10 @@ static const int RDIO_REQUEST_INCREMENT = 50;
       [self updateArtistsFromIndex:_currentArtistIndex];
       [_rdioManager saveCollection];
     } else {
-      [self updateAlbumsFromIndex:_currentAlbumIndex];
+      //[self updateAlbumsFromIndex:_currentAlbumIndex];
+      
+      // short circuit right now for hand testing.
+      [self completeCollectionUpdater];
     }
   }
 }
@@ -216,6 +221,9 @@ static const int RDIO_REQUEST_INCREMENT = 50;
   NSLog(@"finished updating Rdio!!");
   
   // do stuff
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setInteger:_updatingToVersion forKey:@"libraryVersion"];
+  [defaults synchronize];
   
   // and then,
   [self resetState];

@@ -31,4 +31,17 @@
   return nil;
 }
 
++ (NSArray *)artistsInContext:(NSManagedObjectContext *)context
+{
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Artist"];
+  NSError *fetchError;
+  NSArray *results = [context executeFetchRequest:fetchRequest error:&fetchError];
+  if (results) {
+    return results;
+  } else {
+    NSLog(@"ERROR FETCHING ARTISTS! %@", [fetchError localizedDescription]);
+    return @[];
+  }
+}
+
 @end

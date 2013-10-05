@@ -18,6 +18,8 @@
   NSManagedObjectContext *_managedObjectContext;
   NSPersistentStoreCoordinator *_persistentStoreCoordinator;
   NSManagedObjectModel *_managedObjectModel;
+  
+  NSArray *_cachedArtists;
 }
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -48,6 +50,7 @@
       NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
       abort();
     }
+    NSLog(@"Saved collection");
   }
 }
 
@@ -140,6 +143,7 @@
       Artist *artist = [Artist artistWithKey:key inContext:self.managedObjectContext];
       if (artist == nil) {
         artist = [[Artist alloc] initWithEntity:[NSEntityDescription entityForName:@"Artist" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
+        NSLog(@"Adding artist %@ to collection", [artistData objectForKey:@"name"]);
       }
       
       artist.rdioKey = key;
@@ -158,6 +162,46 @@
 - (void)updateTracks:(NSArray *)tracksData toVersion:(NSInteger)version
 {
   
+}
+
+#pragma mark - RCMediaManagerProtocol methods
+- (NSArray *)artistsInLibrary
+{
+  if (_cachedArtists == nil) {
+    NSArray *rawArtists = [Artist artistsInContext:self.managedObjectContext];
+    NSMutableArray *scrubArray = [[NSMutableArray alloc] initWithCapacity:[rawArtists count]];
+    for (Artist *artist in rawArtists) {
+      NSDictionary *artistDict = @{@"title": artist.name};
+      [scrubArray addObject:artistDict];
+    }
+    _cachedArtists = [NSArray arrayWithArray:scrubArray];
+  }
+  return _cachedArtists;
+}
+
+- (NSArray *)playlistsInLibrary
+{
+  return @[];
+}
+
+- (NSArray *)albumsByArtist:(NSString *)artist
+{
+  return @[];
+}
+
+- (NSArray *)songsByArtist:(NSString *)artist
+{
+  return @[];
+}
+
+- (NSArray *)songsOnAlbum:(NSString *)album
+{
+  return @[];
+}
+
+- (NSArray *)songsInPlaylist:(NSString *)playlist
+{
+  return @[];
 }
 
 @end

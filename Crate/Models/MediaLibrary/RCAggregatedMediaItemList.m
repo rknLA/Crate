@@ -9,6 +9,7 @@
 #import "RCAggregatedMediaItemList.h"
 
 #import "RCiPodMediaManager.h"
+#import "RCRdioCollectionManager.h"
 
 static RCAggregatedMediaItemList *_sharedCollection = nil;
 
@@ -27,7 +28,8 @@ static RCAggregatedMediaItemList *_sharedCollection = nil;
   if (!_sharedCollection) {
     _sharedCollection = [[RCAggregatedMediaItemList alloc] init];
     _sharedCollection.mediaSources = @[
-                                       [[RCiPodMediaManager alloc] init]
+                                       [[RCiPodMediaManager alloc] init],
+                                       [[RCRdioCollectionManager alloc] init]
                                        ];
   }
 

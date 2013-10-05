@@ -36,5 +36,6 @@
 @interface Artist (RCAdditions)
 
 + (Artist *)artistWithKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
++ (NSArray *)artistsInContext:(NSManagedObjectContext *)context;
 
 @end
