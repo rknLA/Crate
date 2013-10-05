@@ -8,6 +8,7 @@
 
 #import "RCRdio.h"
 #import "RCRdioCredentials.h"
+#import "RCRdioCollectionUpdater.h"
 
 static NSString * const kRdioAccessTokenDefaultsKey = @"rdioAccessToken";
 
@@ -41,6 +42,8 @@ static NSString * const kRdioAccessTokenDefaultsKey = @"rdioAccessToken";
   if (self) {
     _rdio = [[Rdio alloc] initWithConsumerKey:RDIO_CONSUMER_KEY andSecret:RDIO_CONSUMER_SECRET delegate:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    /* login to rdio if there's a token available */
     NSString *token = [defaults stringForKey:kRdioAccessTokenDefaultsKey];
     if (token) {
       _accessToken = token;
@@ -62,6 +65,13 @@ static NSString * const kRdioAccessTokenDefaultsKey = @"rdioAccessToken";
     _accessToken = [defaults stringForKey:kRdioAccessTokenDefaultsKey];
   } else {
     NSLog(@"used stored access token");
+  }
+  
+  id userLibraryString = [user objectForKey:@"libraryVersion"];
+  if (userLibraryString && [userLibraryString isKindOfClass:[NSNumber class]]) {
+    NSInteger libraryVersion = [(NSNumber *)userLibraryString integerValue];
+    RCRdioCollectionUpdater *updater = [RCRdioCollectionUpdater sharedUpdater];
+    [updater updateToVersion:libraryVersion];
   }
 }
 
