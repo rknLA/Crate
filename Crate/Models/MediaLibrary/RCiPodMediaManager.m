@@ -17,6 +17,7 @@
 - (NSArray *)artistsInLibrary
 {
   MPMediaQuery *query = [MPMediaQuery artistsQuery];
+  [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:[NSNumber numberWithBool:NO] forProperty:MPMediaItemPropertyIsCloudItem]];
 
   NSArray *collections = [query collections];
   NSMutableArray *artists = [NSMutableArray arrayWithCapacity:20];
@@ -39,6 +40,7 @@
 - (NSArray *)albumsByArtist:(NSString *)artist
 {
   MPMediaQuery *query = [MPMediaQuery albumsQuery];
+  [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:[NSNumber numberWithBool:NO] forProperty:MPMediaItemPropertyIsCloudItem]];
   
   if (artist) {
     MPMediaPropertyPredicate *artistFilter = [MPMediaPropertyPredicate predicateWithValue:artist forProperty:MPMediaItemPropertyArtist comparisonType:MPMediaPredicateComparisonEqualTo];
@@ -65,6 +67,7 @@
 - (NSArray *)songsByArtist:(NSString *)artist
 {
   MPMediaQuery *query = [MPMediaQuery songsQuery];
+  [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:[NSNumber numberWithBool:NO] forProperty:MPMediaItemPropertyIsCloudItem]];
   
   if (artist) {
     MPMediaPropertyPredicate *artistFilter = [MPMediaPropertyPredicate predicateWithValue:artist forProperty:MPMediaItemPropertyArtist comparisonType:MPMediaPredicateComparisonEqualTo];
@@ -85,6 +88,7 @@
 - (NSArray *)songsOnAlbum:(NSString *)album
 {
   MPMediaQuery *query = [MPMediaQuery songsQuery];
+  [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:[NSNumber numberWithBool:NO] forProperty:MPMediaItemPropertyIsCloudItem]];
   
   if (album) {
     MPMediaPropertyPredicate *albumFilter = [MPMediaPropertyPredicate predicateWithValue:album forProperty:MPMediaItemPropertyAlbumTitle comparisonType:MPMediaPredicateComparisonEqualTo];
