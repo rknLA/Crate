@@ -39,6 +39,10 @@
 		0A8184C8180042CE0088CD62 /* RdioCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A8184C6180042CE0088CD62 /* RdioCollection.xcdatamodeld */; };
 		0A8184CB180061D80088CD62 /* RCRdioCollectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8184CA180061D80088CD62 /* RCRdioCollectionManager.m */; };
 		0A8184CE180070740088CD62 /* RCRdioCollectionUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8184CD180070740088CD62 /* RCRdioCollectionUpdater.m */; };
+		0A8184D01800A0E00088CD62 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8184CF1800A0E00088CD62 /* CoreData.framework */; };
+		0A8185141800ADF30088CD62 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185131800ADF30088CD62 /* Artist.m */; };
+		0A8185171800ADF30088CD62 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185161800ADF30088CD62 /* Album.m */; };
+		0A81851A1800ADF30088CD62 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185191800ADF30088CD62 /* Track.m */; };
 		0AC15FCE17B3688D0026FEF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCD17B3688D0026FEF2 /* UIKit.framework */; };
 		0AC15FD017B3688D0026FEF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCF17B3688D0026FEF2 /* Foundation.framework */; };
 		0AC15FD217B3688D0026FEF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FD117B3688D0026FEF2 /* CoreGraphics.framework */; };
@@ -107,6 +111,13 @@
 		0A8184CA180061D80088CD62 /* RCRdioCollectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioCollectionManager.m; sourceTree = "<group>"; };
 		0A8184CC180070740088CD62 /* RCRdioCollectionUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioCollectionUpdater.h; sourceTree = "<group>"; };
 		0A8184CD180070740088CD62 /* RCRdioCollectionUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioCollectionUpdater.m; sourceTree = "<group>"; };
+		0A8184CF1800A0E00088CD62 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0A8185121800ADF30088CD62 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		0A8185131800ADF30088CD62 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		0A8185151800ADF30088CD62 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		0A8185161800ADF30088CD62 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		0A8185181800ADF30088CD62 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		0A8185191800ADF30088CD62 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		0AC15FCA17B3688D0026FEF2 /* Crate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC15FCD17B3688D0026FEF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC15FCF17B3688D0026FEF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8184D01800A0E00088CD62 /* CoreData.framework in Frameworks */,
 				0A07915317D5A73E00CC2065 /* Security.framework in Frameworks */,
 				0A07915117D5A73A00CC2065 /* AudioToolbox.framework in Frameworks */,
 				0A07914F17D5A73500CC2065 /* SystemConfiguration.framework in Frameworks */,
@@ -172,6 +184,12 @@
 				0A07914617D5A66500CC2065 /* RCRdio.m */,
 				0A07915417D5A7CF00CC2065 /* RCRdioCredentials.h */,
 				0A8184C6180042CE0088CD62 /* RdioCollection.xcdatamodeld */,
+				0A8185181800ADF30088CD62 /* Track.h */,
+				0A8185191800ADF30088CD62 /* Track.m */,
+				0A8185151800ADF30088CD62 /* Album.h */,
+				0A8185161800ADF30088CD62 /* Album.m */,
+				0A8185121800ADF30088CD62 /* Artist.h */,
+				0A8185131800ADF30088CD62 /* Artist.m */,
 				0A8184C9180061D80088CD62 /* RCRdioCollectionManager.h */,
 				0A8184CA180061D80088CD62 /* RCRdioCollectionManager.m */,
 				0A8184CC180070740088CD62 /* RCRdioCollectionUpdater.h */,
@@ -246,6 +264,7 @@
 		0AC15FCC17B3688D0026FEF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A8184CF1800A0E00088CD62 /* CoreData.framework */,
 				0A07915217D5A73E00CC2065 /* Security.framework */,
 				0A07915017D5A73A00CC2065 /* AudioToolbox.framework */,
 				0A07914E17D5A73500CC2065 /* SystemConfiguration.framework */,
@@ -448,6 +467,7 @@
 				0AC15FDA17B3688D0026FEF2 /* main.m in Sources */,
 				0A8184CE180070740088CD62 /* RCRdioCollectionUpdater.m in Sources */,
 				0AC15FDE17B3688D0026FEF2 /* RCAppDelegate.m in Sources */,
+				0A81851A1800ADF30088CD62 /* Track.m in Sources */,
 				0AC1600717B369990026FEF2 /* RCMainTabBarController.m in Sources */,
 				0AC1601D17B36D5A0026FEF2 /* RCSettingsViewController.m in Sources */,
 				0A733DFB17B9775200E64D74 /* RCArtistCell.m in Sources */,
@@ -457,8 +477,10 @@
 				0A733E0717B9777900E64D74 /* RCPlaylistCell.m in Sources */,
 				0A733E1317B97ADF00E64D74 /* RCAggregatedMediaItemList.m in Sources */,
 				0A733E1517B97ADF00E64D74 /* RCiPodMediaManager.m in Sources */,
+				0A8185171800ADF30088CD62 /* Album.m in Sources */,
 				0A0DB67A17B99D200033F4E7 /* RCMediaItemsTableViewController.m in Sources */,
 				0A0DB67E17B99D950033F4E7 /* RCMediaNavigationController.m in Sources */,
+				0A8185141800ADF30088CD62 /* Artist.m in Sources */,
 				0A0DB68217B9A15C0033F4E7 /* RCArtistsViewController.m in Sources */,
 				0A0DB68917B9CE4F0033F4E7 /* RCAlbumsViewController.m in Sources */,
 				0AE8B87617BCA37A00B9E9EB /* RCAlbumViewController.m in Sources */,

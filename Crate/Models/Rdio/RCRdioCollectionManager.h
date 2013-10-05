@@ -11,4 +11,10 @@
 
 @interface RCRdioCollectionManager : NSObject <RCMediaManager>
 
+- (void)updateArtists:(NSArray *)artistsData toVersion:(NSInteger)version;
+- (void)updateAlbums:(NSArray *)albumsData toVersion:(NSInteger)version;
+- (void)updateTracks:(NSArray *)tracksData toVersion:(NSInteger)version;
+
+- (void)saveCollection;
+
 @end

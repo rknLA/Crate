@@ -25,7 +25,7 @@ static const int RDIO_REQUEST_INCREMENT = 50;
 
   NSInteger _trackCount;
   NSInteger _currentTrackIndex;
-  
+
   BOOL _updating;
 }
 
@@ -48,31 +48,40 @@ static const int RDIO_REQUEST_INCREMENT = 50;
   self = [super init];
   if (self) {
     _rdio = [RCRdio sharedRdio];
-    
-    _updatingToVersion = 0;
-    _updating = NO;
-    
-    _artistCount = 0;
-    _currentArtistIndex = 0;
-    
-    _albumCount = 0;
-    _currentAlbumIndex = 0;
-    
-    _trackCount = 0;
-    _currentTrackIndex = 0;
+    [self resetState];
   }
   return self;
+}
+
+- (void)resetState
+{
+  _rdioManager = nil;
+
+  _updatingToVersion = 0;
+  _updating = NO;
+  
+  _artistCount = 0;
+  _currentArtistIndex = 0;
+  
+  _albumCount = 0;
+  _currentAlbumIndex = 0;
+  
+  _trackCount = 0;
+  _currentTrackIndex = 0;
 }
 
 
 - (void)updateToVersion:(NSInteger)newVersion
 {
   _updating = YES;
+  _updatingToVersion = newVersion;
   
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   NSInteger currentVersion = [defaults integerForKey:@"libraryVersion"];
   
   if (newVersion > currentVersion) {
+    _rdioManager = [[RCRdioCollectionManager alloc] init];
+    
     // the update method continues to call itself in pages until artists are finished,
     // then it kicks off the same update process for albums, and then tracks.
     [self updateArtistsFromIndex:_currentArtistIndex];
@@ -97,7 +106,6 @@ static const int RDIO_REQUEST_INCREMENT = 50;
 - (void)collectionRequest:(RDAPIRequest*)request didLoadArtistData:(NSDictionary *)artistData
 {
   NSLog(@"Artist data: %@", artistData);
-  NSInteger start = [(NSNumber *)[artistData objectForKey:@"start"] integerValue];
   NSInteger total = [(NSNumber *)[artistData objectForKey:@"total"] integerValue];
   NSArray *artists = [artistData objectForKey:@"items"];
   if (artists) {
@@ -107,12 +115,13 @@ static const int RDIO_REQUEST_INCREMENT = 50;
       _artistCount = total;
     }
     
-    // TODO add items to coredata
+    [_rdioManager updateArtists:artists toVersion:_updatingToVersion];
     
     _currentArtistIndex += resultCount;
     
     if (_currentArtistIndex < _artistCount) {
       [self updateArtistsFromIndex:_currentArtistIndex];
+      [_rdioManager saveCollection];
     } else {
       [self updateAlbumsFromIndex:_currentAlbumIndex];
     }
@@ -142,7 +151,6 @@ static const int RDIO_REQUEST_INCREMENT = 50;
 - (void)collectionRequest:(RDAPIRequest*)request didLoadAlbumData:(NSDictionary *)albumData
 {
   NSLog(@"Album data: %@", albumData);
-  NSInteger start = [(NSNumber *)[albumData objectForKey:@"start"] integerValue];
   NSInteger total = [(NSNumber *)[albumData objectForKey:@"total"] integerValue];
   NSArray *albums = [albumData objectForKey:@"items"];
   if (albums) {
@@ -152,8 +160,8 @@ static const int RDIO_REQUEST_INCREMENT = 50;
       _albumCount = total;
     }
     
-    // TODO add items to coredata
-    
+    [_rdioManager updateAlbums:albums toVersion:_updatingToVersion];
+
     _currentAlbumIndex += resultCount;
     
     if (_currentAlbumIndex < _albumCount) {
@@ -181,7 +189,6 @@ static const int RDIO_REQUEST_INCREMENT = 50;
 - (void)collectionRequest:(RDAPIRequest*)request didLoadTrackData:(NSDictionary *)trackData
 {
   NSLog(@"Track data: %@", trackData);
-  NSInteger start = [(NSNumber *)[trackData objectForKey:@"start"] integerValue];
   NSInteger total = [(NSNumber *)[trackData objectForKey:@"total"] integerValue];
   NSArray *tracks = [trackData objectForKey:@"items"];
   if (tracks) {
@@ -191,16 +198,27 @@ static const int RDIO_REQUEST_INCREMENT = 50;
       _trackCount = total;
     }
     
-    // TODO add items to coredata
-    
+    [_rdioManager updateTracks:tracks toVersion:_updatingToVersion];
     _currentTrackIndex += resultCount;
     
     if (_currentTrackIndex < _trackCount) {
       [self updateTracksFromIndex:_currentTrackIndex];
     } else {
-      NSLog(@"finished updating Rdio!!");
+      [self completeCollectionUpdater];
     }
   }
+}
+
+#pragma mark - CoreData manipulation following API requests
+
+- (void)completeCollectionUpdater
+{
+  NSLog(@"finished updating Rdio!!");
+  
+  // do stuff
+  
+  // and then,
+  [self resetState];
 }
 
 
