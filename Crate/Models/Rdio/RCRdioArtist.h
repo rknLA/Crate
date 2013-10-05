@@ -1,16 +1,17 @@
 //
-//  Artist.h
+//  RCRdioArtist.h
 //  Crate
 //
-//  Created by Kevin Nelson on 10/5/13.
+//  Created by Kevin Nelson on 10/6/13.
 //  Copyright (c) 2013 R. Kevin Nelson. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class RCRdioAlbum, RCRdioTrack;
 
-@interface Artist : NSManagedObject
+@interface RCRdioArtist : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * rdioKey;
@@ -19,23 +20,23 @@
 @property (nonatomic, retain) NSSet *tracks;
 @end
 
-@interface Artist (CoreDataGeneratedAccessors)
+@interface RCRdioArtist (CoreDataGeneratedAccessors)
 
-- (void)addAlbumsObject:(NSManagedObject *)value;
-- (void)removeAlbumsObject:(NSManagedObject *)value;
+- (void)addAlbumsObject:(RCRdioAlbum *)value;
+- (void)removeAlbumsObject:(RCRdioAlbum *)value;
 - (void)addAlbums:(NSSet *)values;
 - (void)removeAlbums:(NSSet *)values;
 
-- (void)addTracksObject:(NSManagedObject *)value;
-- (void)removeTracksObject:(NSManagedObject *)value;
+- (void)addTracksObject:(RCRdioTrack *)value;
+- (void)removeTracksObject:(RCRdioTrack *)value;
 - (void)addTracks:(NSSet *)values;
 - (void)removeTracks:(NSSet *)values;
 
 @end
 
-@interface Artist (RCAdditions)
+@interface RCRdioArtist (RCAdditions)
 
-+ (Artist *)artistWithKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
++ (RCRdioArtist *)artistWithKey:(NSString *)key inContext:(NSManagedObjectContext *)context;
 + (NSArray *)artistsInContext:(NSManagedObjectContext *)context;
 
 @end

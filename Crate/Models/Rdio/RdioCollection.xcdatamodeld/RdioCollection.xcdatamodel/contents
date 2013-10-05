@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Album" representedClassName="Album" syncable="YES">
+    <entity name="RCRdioAlbum" representedClassName="RCRdioAlbum" syncable="YES">
         <attribute name="artwork" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="length" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="libraryVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rdioKey" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="albums" inverseEntity="Artist" syncable="YES"/>
-        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="album" inverseEntity="Track" syncable="YES"/>
+        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCRdioArtist" inverseName="albums" inverseEntity="RCRdioArtist" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCRdioTrack" inverseName="album" inverseEntity="RCRdioTrack" syncable="YES"/>
     </entity>
-    <entity name="Artist" representedClassName="Artist" syncable="YES">
+    <entity name="RCRdioArtist" representedClassName="RCRdioArtist" syncable="YES">
         <attribute name="libraryVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rdioKey" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Album" inverseName="artist" inverseEntity="Album" syncable="YES"/>
-        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="artist" inverseEntity="Track" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCRdioAlbum" inverseName="artist" inverseEntity="RCRdioAlbum" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RCRdioTrack" inverseName="artist" inverseEntity="RCRdioTrack" syncable="YES"/>
     </entity>
-    <entity name="Track" representedClassName="Track" syncable="YES">
+    <entity name="RCRdioTrack" representedClassName="RCRdioTrack" syncable="YES">
         <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="libraryVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rdioKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="trackNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="tracks" inverseEntity="Album" syncable="YES"/>
-        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="tracks" inverseEntity="Artist" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCRdioAlbum" inverseName="tracks" inverseEntity="RCRdioAlbum" syncable="YES"/>
+        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RCRdioArtist" inverseName="tracks" inverseEntity="RCRdioArtist" syncable="YES"/>
+    </entity>
+    <entity name="RCRdioUpdateState" representedClassName="RCRdioUpdateState" syncable="YES">
+        <attribute name="albumCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="albumsProcessed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="artistCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="artistsProcessed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="trackCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tracksProcessed" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Album" positionX="7" positionY="153" width="128" height="148"/>
-        <element name="Artist" positionX="304" positionY="-45" width="128" height="103"/>
-        <element name="Track" positionX="475" positionY="198" width="128" height="135"/>
+        <element name="RCRdioAlbum" positionX="7" positionY="153" width="128" height="148"/>
+        <element name="RCRdioArtist" positionX="304" positionY="-45" width="128" height="103"/>
+        <element name="RCRdioTrack" positionX="475" positionY="198" width="128" height="135"/>
+        <element name="RCRdioUpdateState" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

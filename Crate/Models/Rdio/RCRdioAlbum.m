@@ -1,16 +1,17 @@
 //
-//  Album.m
+//  RCRdioAlbum.m
 //  Crate
 //
-//  Created by Kevin Nelson on 10/5/13.
+//  Created by Kevin Nelson on 10/6/13.
 //  Copyright (c) 2013 R. Kevin Nelson. All rights reserved.
 //
 
-#import "Album.h"
-#import "Artist.h"
+#import "RCRdioAlbum.h"
+#import "RCRdioArtist.h"
+#import "RCRdioTrack.h"
 
 
-@implementation Album
+@implementation RCRdioAlbum
 
 @dynamic rdioKey;
 @dynamic name;

@@ -82,6 +82,17 @@ static const int RDIO_REQUEST_INCREMENT = 50;
   if (newVersion > currentVersion) {
     _rdioManager = [[RCRdioCollectionManager alloc] init];
     
+    RCRdioUpdateState *updateState = [_rdioManager updateState];
+    _artistCount = [updateState.artistCount integerValue];
+    _currentArtistIndex = [updateState.artistsProcessed integerValue];
+    
+    _albumCount = [updateState.albumCount integerValue];
+    _currentAlbumIndex = [updateState.albumsProcessed integerValue];
+    
+    _trackCount = [updateState.trackCount integerValue];
+    _currentTrackIndex = [updateState.tracksProcessed integerValue];
+
+    
     // the update method continues to call itself in pages until artists are finished,
     // then it kicks off the same update process for albums, and then tracks.
     [self updateArtistsFromIndex:_currentArtistIndex];
@@ -118,17 +129,18 @@ static const int RDIO_REQUEST_INCREMENT = 50;
     }
     
     [_rdioManager updateArtists:artists toVersion:_updatingToVersion];
-    
+
     _currentArtistIndex += resultCount;
+
+    RCRdioUpdateState *state = [_rdioManager updateState];
+    state.artistCount = [NSNumber numberWithInteger:_artistCount];
+    state.artistsProcessed = [NSNumber numberWithInteger:_currentArtistIndex];
+    [_rdioManager saveCollection];
     
     if (_currentArtistIndex < _artistCount) {
       [self updateArtistsFromIndex:_currentArtistIndex];
-      [_rdioManager saveCollection];
     } else {
-      //[self updateAlbumsFromIndex:_currentAlbumIndex];
-      
-      // short circuit right now for hand testing.
-      [self completeCollectionUpdater];
+      [self updateAlbumsFromIndex:_currentAlbumIndex];
     }
   }
 }
@@ -169,6 +181,11 @@ static const int RDIO_REQUEST_INCREMENT = 50;
 
     _currentAlbumIndex += resultCount;
     
+    RCRdioUpdateState *state = [_rdioManager updateState];
+    state.albumCount = [NSNumber numberWithInteger:_albumCount];
+    state.albumsProcessed = [NSNumber numberWithInteger:_currentAlbumIndex];
+    [_rdioManager saveCollection];
+    
     if (_currentAlbumIndex < _albumCount) {
       [self updateAlbumsFromIndex:_currentAlbumIndex];
     } else {
@@ -205,6 +222,10 @@ static const int RDIO_REQUEST_INCREMENT = 50;
     
     [_rdioManager updateTracks:tracks toVersion:_updatingToVersion];
     _currentTrackIndex += resultCount;
+    RCRdioUpdateState *state = [_rdioManager updateState];
+    state.trackCount = [NSNumber numberWithInteger:_trackCount];
+    state.tracksProcessed = [NSNumber numberWithInteger:_currentTrackIndex];
+    [_rdioManager saveCollection];
     
     if (_currentTrackIndex < _trackCount) {
       [self updateTracksFromIndex:_currentTrackIndex];
@@ -221,6 +242,8 @@ static const int RDIO_REQUEST_INCREMENT = 50;
   NSLog(@"finished updating Rdio!!");
   
   // do stuff
+  [_rdioManager clearUpdateState];
+  [_rdioManager saveCollection];
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   [defaults setInteger:_updatingToVersion forKey:@"libraryVersion"];
   [defaults synchronize];

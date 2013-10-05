@@ -1,15 +1,17 @@
 //
-//  Artist.m
+//  RCRdioArtist.m
 //  Crate
 //
-//  Created by Kevin Nelson on 10/5/13.
+//  Created by Kevin Nelson on 10/6/13.
 //  Copyright (c) 2013 R. Kevin Nelson. All rights reserved.
 //
 
-#import "Artist.h"
+#import "RCRdioArtist.h"
+#import "RCRdioAlbum.h"
+#import "RCRdioTrack.h"
 
 
-@implementation Artist
+@implementation RCRdioArtist
 
 @dynamic name;
 @dynamic rdioKey;
@@ -17,9 +19,9 @@
 @dynamic albums;
 @dynamic tracks;
 
-+ (Artist *)artistWithKey:(NSString *)key inContext:(NSManagedObjectContext *)context
++ (RCRdioArtist *)artistWithKey:(NSString *)key inContext:(NSManagedObjectContext *)context
 {
-  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Artist"];
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"RCRdioArtist"];
   NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"rdioKey like %s", key];
   [fetchRequest setPredicate:filterPredicate];
   
@@ -33,7 +35,7 @@
 
 + (NSArray *)artistsInContext:(NSManagedObjectContext *)context
 {
-  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Artist"];
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"RCRdioArtist"];
   NSError *fetchError;
   NSArray *results = [context executeFetchRequest:fetchRequest error:&fetchError];
   if (results) {
@@ -45,3 +47,4 @@
 }
 
 @end
+

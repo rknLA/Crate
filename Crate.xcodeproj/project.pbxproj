@@ -40,9 +40,10 @@
 		0A8184CB180061D80088CD62 /* RCRdioCollectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8184CA180061D80088CD62 /* RCRdioCollectionManager.m */; };
 		0A8184CE180070740088CD62 /* RCRdioCollectionUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8184CD180070740088CD62 /* RCRdioCollectionUpdater.m */; };
 		0A8184D01800A0E00088CD62 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8184CF1800A0E00088CD62 /* CoreData.framework */; };
-		0A8185141800ADF30088CD62 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185131800ADF30088CD62 /* Artist.m */; };
-		0A8185171800ADF30088CD62 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185161800ADF30088CD62 /* Album.m */; };
-		0A81851A1800ADF30088CD62 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185191800ADF30088CD62 /* Track.m */; };
+		0A81851D1800C7BE0088CD62 /* RCRdioUpdateState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A81851C1800C7BE0088CD62 /* RCRdioUpdateState.m */; };
+		0A8185321800C8200088CD62 /* RCRdioAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185311800C8200088CD62 /* RCRdioAlbum.m */; };
+		0A8185351800C8200088CD62 /* RCRdioArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185341800C8200088CD62 /* RCRdioArtist.m */; };
+		0A8185381800C8210088CD62 /* RCRdioTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8185371800C8210088CD62 /* RCRdioTrack.m */; };
 		0AC15FCE17B3688D0026FEF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCD17B3688D0026FEF2 /* UIKit.framework */; };
 		0AC15FD017B3688D0026FEF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FCF17B3688D0026FEF2 /* Foundation.framework */; };
 		0AC15FD217B3688D0026FEF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC15FD117B3688D0026FEF2 /* CoreGraphics.framework */; };
@@ -112,12 +113,14 @@
 		0A8184CC180070740088CD62 /* RCRdioCollectionUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioCollectionUpdater.h; sourceTree = "<group>"; };
 		0A8184CD180070740088CD62 /* RCRdioCollectionUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioCollectionUpdater.m; sourceTree = "<group>"; };
 		0A8184CF1800A0E00088CD62 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0A8185121800ADF30088CD62 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
-		0A8185131800ADF30088CD62 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
-		0A8185151800ADF30088CD62 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
-		0A8185161800ADF30088CD62 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
-		0A8185181800ADF30088CD62 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
-		0A8185191800ADF30088CD62 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		0A81851B1800C7BE0088CD62 /* RCRdioUpdateState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioUpdateState.h; sourceTree = "<group>"; };
+		0A81851C1800C7BE0088CD62 /* RCRdioUpdateState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioUpdateState.m; sourceTree = "<group>"; };
+		0A8185301800C8200088CD62 /* RCRdioAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioAlbum.h; sourceTree = "<group>"; };
+		0A8185311800C8200088CD62 /* RCRdioAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioAlbum.m; sourceTree = "<group>"; };
+		0A8185331800C8200088CD62 /* RCRdioArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioArtist.h; sourceTree = "<group>"; };
+		0A8185341800C8200088CD62 /* RCRdioArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioArtist.m; sourceTree = "<group>"; };
+		0A8185361800C8200088CD62 /* RCRdioTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRdioTrack.h; sourceTree = "<group>"; };
+		0A8185371800C8210088CD62 /* RCRdioTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRdioTrack.m; sourceTree = "<group>"; };
 		0AC15FCA17B3688D0026FEF2 /* Crate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC15FCD17B3688D0026FEF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AC15FCF17B3688D0026FEF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,12 +187,14 @@
 				0A07914617D5A66500CC2065 /* RCRdio.m */,
 				0A07915417D5A7CF00CC2065 /* RCRdioCredentials.h */,
 				0A8184C6180042CE0088CD62 /* RdioCollection.xcdatamodeld */,
-				0A8185181800ADF30088CD62 /* Track.h */,
-				0A8185191800ADF30088CD62 /* Track.m */,
-				0A8185151800ADF30088CD62 /* Album.h */,
-				0A8185161800ADF30088CD62 /* Album.m */,
-				0A8185121800ADF30088CD62 /* Artist.h */,
-				0A8185131800ADF30088CD62 /* Artist.m */,
+				0A8185361800C8200088CD62 /* RCRdioTrack.h */,
+				0A8185371800C8210088CD62 /* RCRdioTrack.m */,
+				0A8185331800C8200088CD62 /* RCRdioArtist.h */,
+				0A8185341800C8200088CD62 /* RCRdioArtist.m */,
+				0A8185301800C8200088CD62 /* RCRdioAlbum.h */,
+				0A8185311800C8200088CD62 /* RCRdioAlbum.m */,
+				0A81851B1800C7BE0088CD62 /* RCRdioUpdateState.h */,
+				0A81851C1800C7BE0088CD62 /* RCRdioUpdateState.m */,
 				0A8184C9180061D80088CD62 /* RCRdioCollectionManager.h */,
 				0A8184CA180061D80088CD62 /* RCRdioCollectionManager.m */,
 				0A8184CC180070740088CD62 /* RCRdioCollectionUpdater.h */,
@@ -465,25 +470,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC15FDA17B3688D0026FEF2 /* main.m in Sources */,
+				0A81851D1800C7BE0088CD62 /* RCRdioUpdateState.m in Sources */,
+				0A8185321800C8200088CD62 /* RCRdioAlbum.m in Sources */,
 				0A8184CE180070740088CD62 /* RCRdioCollectionUpdater.m in Sources */,
 				0AC15FDE17B3688D0026FEF2 /* RCAppDelegate.m in Sources */,
-				0A81851A1800ADF30088CD62 /* Track.m in Sources */,
 				0AC1600717B369990026FEF2 /* RCMainTabBarController.m in Sources */,
 				0AC1601D17B36D5A0026FEF2 /* RCSettingsViewController.m in Sources */,
 				0A733DFB17B9775200E64D74 /* RCArtistCell.m in Sources */,
 				0A8184C8180042CE0088CD62 /* RdioCollection.xcdatamodeld in Sources */,
 				0A733DFF17B9776700E64D74 /* RCSongCell.m in Sources */,
+				0A8185381800C8210088CD62 /* RCRdioTrack.m in Sources */,
 				0A733E0317B9777000E64D74 /* RCAlbumCell.m in Sources */,
 				0A733E0717B9777900E64D74 /* RCPlaylistCell.m in Sources */,
 				0A733E1317B97ADF00E64D74 /* RCAggregatedMediaItemList.m in Sources */,
 				0A733E1517B97ADF00E64D74 /* RCiPodMediaManager.m in Sources */,
-				0A8185171800ADF30088CD62 /* Album.m in Sources */,
 				0A0DB67A17B99D200033F4E7 /* RCMediaItemsTableViewController.m in Sources */,
 				0A0DB67E17B99D950033F4E7 /* RCMediaNavigationController.m in Sources */,
-				0A8185141800ADF30088CD62 /* Artist.m in Sources */,
 				0A0DB68217B9A15C0033F4E7 /* RCArtistsViewController.m in Sources */,
 				0A0DB68917B9CE4F0033F4E7 /* RCAlbumsViewController.m in Sources */,
 				0AE8B87617BCA37A00B9E9EB /* RCAlbumViewController.m in Sources */,
+				0A8185351800C8200088CD62 /* RCRdioArtist.m in Sources */,
 				0A8184CB180061D80088CD62 /* RCRdioCollectionManager.m in Sources */,
 				0A07914717D5A66500CC2065 /* RCRdio.m in Sources */,
 			);

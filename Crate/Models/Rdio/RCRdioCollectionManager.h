@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "RCMediaManagerProtocol.h"
 
+#import "RCRdioUpdateState.h"
+
 @interface RCRdioCollectionManager : NSObject <RCMediaManager>
+
+- (RCRdioUpdateState *)updateState;
+- (void)clearUpdateState;
 
 - (void)updateArtists:(NSArray *)artistsData toVersion:(NSInteger)version;
 - (void)updateAlbums:(NSArray *)albumsData toVersion:(NSInteger)version;

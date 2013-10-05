@@ -1,17 +1,17 @@
 //
-//  Track.m
+//  RCRdioTrack.m
 //  Crate
 //
-//  Created by Kevin Nelson on 10/5/13.
+//  Created by Kevin Nelson on 10/6/13.
 //  Copyright (c) 2013 R. Kevin Nelson. All rights reserved.
 //
 
-#import "Track.h"
-#import "Album.h"
-#import "Artist.h"
+#import "RCRdioTrack.h"
+#import "RCRdioAlbum.h"
+#import "RCRdioArtist.h"
 
 
-@implementation Track
+@implementation RCRdioTrack
 
 @dynamic name;
 @dynamic duration;

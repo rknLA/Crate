@@ -10,9 +10,9 @@
 
 #import "RCRdioCollectionManager.h"
 #import "RCRdio.h"
-#import "Album.h"
-#import "Artist.h"
-#import "Track.h"
+#import "RCRdioAlbum.h"
+#import "RCRdioArtist.h"
+#import "RCRdioTrack.h"
 
 @interface RCRdioCollectionManager() {
   NSManagedObjectContext *_managedObjectContext;
@@ -140,9 +140,9 @@
   for (NSDictionary *artistData in artistsData) {
     NSString *key = [artistData objectForKey:@"artistKey"];
     if (key != nil) {
-      Artist *artist = [Artist artistWithKey:key inContext:self.managedObjectContext];
+      RCRdioArtist *artist = [RCRdioArtist artistWithKey:key inContext:self.managedObjectContext];
       if (artist == nil) {
-        artist = [[Artist alloc] initWithEntity:[NSEntityDescription entityForName:@"Artist" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
+        artist = [[RCRdioArtist alloc] initWithEntity:[NSEntityDescription entityForName:@"RCRdioArtist" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
         NSLog(@"Adding artist %@ to collection", [artistData objectForKey:@"name"]);
       }
       
@@ -164,13 +164,34 @@
   
 }
 
+- (RCRdioUpdateState *)updateState
+{
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"RCRdioUpdateState"];
+  NSError *fetchError;
+  NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+  if (results && [results count]) {
+    return [results objectAtIndex:0];
+  }
+  RCRdioUpdateState *state = [[RCRdioUpdateState alloc] initWithEntity:[NSEntityDescription entityForName:@"RCRdioUpdateState" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
+  [self saveCollection];
+  return state;
+}
+
+- (void)clearUpdateState
+{
+  RCRdioUpdateState *state = [self updateState];
+  if (state) {
+    [self.managedObjectContext deleteObject:state];
+  }
+}
+
 #pragma mark - RCMediaManagerProtocol methods
 - (NSArray *)artistsInLibrary
 {
   if (_cachedArtists == nil) {
-    NSArray *rawArtists = [Artist artistsInContext:self.managedObjectContext];
+    NSArray *rawArtists = [RCRdioArtist artistsInContext:self.managedObjectContext];
     NSMutableArray *scrubArray = [[NSMutableArray alloc] initWithCapacity:[rawArtists count]];
-    for (Artist *artist in rawArtists) {
+    for (RCRdioArtist *artist in rawArtists) {
       NSDictionary *artistDict = @{@"title": artist.name};
       [scrubArray addObject:artistDict];
     }
